@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: microservice-discovery-eureka-ha
+
+---
+spring:
+  profiles: chuchenglong
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: chuchenglong
+  client:
+    serviceUrl:
+      defaultZone: http://chuchenglong2:8762/eureka
+
+
+---
+spring:
+  profiles: chuchenglong2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: chuchenglong2
+  client:
+    serviceUrl:
+      defaultZone: http://chuchenglong:8761/eureka
