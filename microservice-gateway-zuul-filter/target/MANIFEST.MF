@@ -1,0 +1,9 @@
+Manifest-Version: 1.0
+Implementation-Title: microservice-gateway-zuul-filter
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ChenglongChu
+Implementation-Vendor-Id: com.mc
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_121
+Main-Class: ${start-class}
+

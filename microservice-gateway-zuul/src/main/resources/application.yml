@@ -1,0 +1,14 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: microservice-gateway-zuul
+
+eureka:
+  instance:
+    hostname: chuchenglong
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://chuchenglong:8761/eureka

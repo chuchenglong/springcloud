@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--<properties resource="application.properties"/>
+	<classPathEntry location="D:/repository/com/oracle/ojdbc6/11.2.0.1.0/ojdbc6-11.2.0.1.0.jar" />
+	-->
+    <context id="Mysql" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="javaFileEncoding" value="UTF-8" />
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <property name="mappers" value="com.mc.config.ConfigQkMapper"/>
+        </plugin>
+
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                        connectionURL="jdbc:mysql://localhost:3306/sc_user"
+                        userId="root"
+                        password="chuchenglong">
+        </jdbcConnection>
+
+        <javaModelGenerator targetPackage="com.mc.model" targetProject="src/main/java"/>
+
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
+
+        <javaClientGenerator targetPackage="com.mc.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
+
+        <table tableName="t_user_info" domainObjectName="UserInfo">
+            <!--% 表示全部表-->
+            <!--mysql 配置-->
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+            <!--oracle 配置-->
+            <!--  <generatedKey column="id" sqlStatement="select SEQ_{1}.nextval from dual" identity="false" type="pre"/> -->
+        </table>
+
+    </context>
+</generatorConfiguration>

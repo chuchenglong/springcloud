@@ -1,6 +1,9 @@
 spring:
+#  profiles:
+#    active: chuchenglong
   application:
     name: microservice-discovery-eureka-ha
+
 
 ---
 spring:
@@ -14,7 +17,6 @@ eureka:
     serviceUrl:
       defaultZone: http://chuchenglong2:8762/eureka
 
-
 ---
 spring:
   profiles: chuchenglong2
@@ -26,3 +28,4 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://chuchenglong:8761/eureka
+

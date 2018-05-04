@@ -1,0 +1,41 @@
+spring:
+#  profiles:
+#    active: chuchenglong
+  application:
+    name: microservice-discovery-eureka-authenticating
+
+
+---
+spring:
+  profiles: chuchenglong
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: chuchenglong
+  client:
+    serviceUrl:
+      defaultZone: http://user2:321@chuchenglong2:8762/eureka
+security:
+  basic:
+    enabled: true
+  user:
+    name: user
+    password: 123
+---
+spring:
+  profiles: chuchenglong2
+server:
+  port: 8762
+eureka:
+  instance:
+    hostname: chuchenglong2
+  client:
+    serviceUrl:
+      defaultZone: http://user:123@chuchenglong:8761/eureka
+security:
+  basic:
+    enabled: true
+  user:
+    name: user2
+    password: 321

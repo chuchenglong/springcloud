@@ -1,0 +1,17 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: microservice-gateway-zuul-upload
+  http:
+    multipart:
+      max-file-size: 2000Mb
+      max-request-size: 2500Mb
+eureka:
+  instance:
+    hostname: chuchenglong
+    prefer-ip-address: true
+  client:
+    serviceUrl:
+      defaultZone: http://chuchenglong:8761/eureka
